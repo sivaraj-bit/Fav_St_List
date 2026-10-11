@@ -4,7 +4,7 @@ A responsive student management web application built with **React, JavaScript, 
 
 ## 🌐 Live Demo
 
-- **Live Website:** [Add your deployed Vercel URL here]
+- **Live Website:** https://fav-st-list.vercel.app/
 - **GitHub Repository:** [Fav_st_List](https://github.com/sivaraj-bit/Fav_st_List)
 
 ## 📌 About the Project
