@@ -2,10 +2,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { StudentContext } from "../context/StudentContext";
-import students from "../data/students.js";
 
 function Dashboard() {
-  const { favourites } = useContext(StudentContext);
+  const { students, favourites } = useContext(StudentContext);
 
   const stats = [
     {
@@ -29,8 +28,9 @@ function Dashboard() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50 px-4 py-10 sm:px-8">
+    <div className="min-h-screen bg-gray-50 px-4 py-10 sm:px-8">
       <div className="mx-auto max-w-5xl">
+        {/* Dashboard Heading */}
         <h1 className="text-3xl font-bold text-gray-800">
           Student Dashboard
         </h1>
@@ -39,6 +39,7 @@ function Dashboard() {
           Manage your students and favourite list in one place.
         </p>
 
+        {/* Statistics Cards */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {stats.map((stat) => (
             <div
@@ -58,6 +59,7 @@ function Dashboard() {
           ))}
         </div>
 
+        {/* Navigation Section */}
         <section className="mt-8 rounded-xl bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-gray-800">
             Manage Students
@@ -70,21 +72,21 @@ function Dashboard() {
           <div className="flex flex-wrap gap-3">
             <Link
               to="/students"
-              className="inline-block rounded-lg bg-blue-600 px-5 py-3 font-medium text-white hover:bg-blue-700"
+              className="inline-block rounded-lg bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-700"
             >
               View Students
             </Link>
 
             <Link
               to="/favourites"
-              className="inline-block rounded-lg bg-pink-600 px-5 py-3 font-medium text-white hover:bg-pink-700"
+              className="inline-block rounded-lg bg-pink-600 px-5 py-3 font-medium text-white transition hover:bg-pink-700"
             >
               View Favourites
             </Link>
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }
 
